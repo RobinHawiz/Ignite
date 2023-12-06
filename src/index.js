@@ -14,6 +14,11 @@ const store = configureStore({
     games: gamesReducer,
     user: userReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      //Removes unnecessesary error messsages in console.
+      serializableCheck: false,
+    }),
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
