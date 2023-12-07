@@ -7,12 +7,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 //Reducers
 import gamesReducer from "./reducers/gamesReducer";
-import userReducer from "./reducers/userReducer";
+import detailReducer from "./reducers/detailReducer";
 
 const store = configureStore({
   reducer: {
     games: gamesReducer,
-    user: userReducer,
+    details: detailReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
