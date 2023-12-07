@@ -5,6 +5,7 @@ import { loadGames } from "../actions/gamesAction";
 import { useEffect } from "react";
 //Components
 import Game from "../components/Game";
+import GameDetail from "../components/GameDetail";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -19,6 +20,7 @@ const Home = () => {
   const { popular, newGames, upcoming } = useSelector((state) => state.games);
   return (
     <GameList>
+      <GameDetail />
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => (
