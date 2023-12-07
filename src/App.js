@@ -4,12 +4,17 @@ import { popularGamesURL } from "./api";
 import Home from "./pages/Home";
 //Styles
 import GlobalStyles from "./components/GlobalStyles";
+//Router
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyles />
-      <Home />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/game/:id" exact element={<Home />} />
+      </Routes>
     </div>
   );
 }
