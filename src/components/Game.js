@@ -8,6 +8,8 @@ import { loadDetail } from "../actions/detailAction";
 import { Link } from "react-router-dom";
 //Utils
 import { smallImage } from "../util";
+//Animations
+import { popup } from "../animations";
 
 const Game = ({ name, released, image, id }) => {
   const stringPathId = id.toString();
@@ -17,7 +19,13 @@ const Game = ({ name, released, image, id }) => {
     dispatch(loadDetail(id));
   };
   return (
-    <StyledGame layoutId={stringPathId} onClick={() => loadDetailsHandler()}>
+    <StyledGame
+      variants={popup}
+      initial="hidden"
+      animate="show"
+      layoutId={stringPathId}
+      onClick={() => loadDetailsHandler()}
+    >
       <Link to={`/game/${id}`}>
         <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
         <p>{released}</p>
